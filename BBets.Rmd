@@ -78,7 +78,19 @@ If looking at the standard deviation `r sd(teachers)` We will subtract it two ti
   
 Knowing that Brownlow is giving a 2:1 bet that at least two people in the same class have the same birthday we will be going over the results of the wager to see if they are fair odds in Brownlow earnings. Having mean of the 40 teachers and subtracting two and adding two standard deviations, we can come up with another way to see if this hypothesis is fair on matching birthdays in a 35 person class.
 
+My strategy is to make sure that Brownlow makes little to zero money on the bet to make it fair. 
 
+```{r}
+teachers<-numeric(40)
+for(i in 1:40){
+teachers[i]=BrLw(odds=4.38)
+}
+```
+
+```{r}
+favstats(teachers)
+```
+We had to mess with the numbers for a while to make this bet fair, and the number we got for a 1:40 bet was an odd of 4.38 which got us as close to zero as possible at a mean of -5.2375 that Brownlow makes for his bet. This means my chances of making money like Brownlow are pretty good.
 
 
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
